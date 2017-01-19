@@ -8,7 +8,7 @@
 #                This is intended to show how automation is possible with certificate
 #
 #=========================================
-if [[ -f x1 ]]
+if [ -f x1 ]
 then
   rm x1 x3 privkey.pem  cert*
 fi
@@ -16,6 +16,10 @@ fi
 azure login
 echo "your app name"
 read app
+echo "which account would you like to use"
+azure account list
+read account
+azure account set $account
 openssl req -x509 -days 3650 -newkey rsa:2048 -out cert.pem -nodes -subj "/CN=$app"
 sed '1d' cert.pem >cert.pem.modified
 
@@ -49,3 +53,4 @@ thumbprint=$(openssl x509 -in certificate.pem -fingerprint -noout | sed 's/SHA1 
 echo "Now you can use the following command to automatically login via a script: loginToAzure.sh  (works only in combination with generated certificate.pem"
 echo "azure login --service-principal --tenant $tenantId -u $newObjectId --certificate-file certificate.pem --thumbprint $thumbprint" >loginToAzure.sh
 chmod 700 loginToAzure.sh
+echo "now logout with azure logout [ your loggedin user ] and login with the created loginToAzure.sh script...njoy!"
