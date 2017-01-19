@@ -1,0 +1,307 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_puppetmaster_adminPassword": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_CustomScriptExtension_protectedSettings": {
+            "defaultValue": null,
+            "type": "SecureObject"
+        },
+        "virtualMachines_puppetmaster_name": {
+            "defaultValue": "puppetmaster",
+            "type": "String"
+        },
+        "networkInterfaces_puppetmasterNic_name": {
+            "defaultValue": "puppetmasterNic",
+            "type": "String"
+        },
+        "networkSecurityGroups_puppetNetworkSecurityGroup_name": {
+            "defaultValue": "puppetNetworkSecurityGroup",
+            "type": "String"
+        },
+        "publicIPAddresses_ip01_name": {
+            "defaultValue": "ip01",
+            "type": "String"
+        },
+        "virtualNetworks_vnet01_name": {
+            "defaultValue": "vnet01",
+            "type": "String"
+        },
+        "storageAccounts_name": {
+            "defaultValue": "ptestz",
+            "type": "String"
+        },
+        "extensions_CustomScriptExtension_name": {
+            "defaultValue": "puppetmaster/CustomScriptExtension",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_puppetmaster_name')]",
+            "apiVersion": "2015-06-15",
+            "location": "westeurope",
+            "plan": {
+                "name": "2016-1",
+                "product": "puppet-enterprise",
+                "publisher": "puppet"
+            },
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_D2_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Puppet",
+                        "offer": "Puppet-Enterprise",
+                        "sku": "2016-1",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "name": "osdisk",
+                        "createOption": "FromImage",
+                        "vhd": {
+                            "uri": "[concat('http', '://', parameters('storageAccounts_name'), '.blob.core.windows.net', '/vhds/osdisk1.vhd')]"
+                        },
+                        "caching": "ReadWrite"
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_puppetmaster_name')]",
+                    "adminUsername": "chris",
+                    "customData": "IyEvYmluL2Jhc2gKCmNhdCA8PEVPRiA+L3RtcC9wdXBwZXRfb3ZlcnJpZGUuYW5zd2VycwphenVyZV9leHRlcm5hbEZRRE49cHRlc3Qud2VzdGV1cm9wZS5jbG91ZGFwcC5henVyZS5jb20KYXp1cmVfaW50ZXJuYWxGUUROPSQoaG9zdG5hbWUgLWYpCgpxX3B1cHBldF9lbnRlcnByaXNlY29uc29sZV9hdXRoX3Bhc3N3b3JkPTEyM1FXRWFzZCFAIwpxX2RhdGFiYXNlX2hvc3Q9XCR7YXp1cmVfZXh0ZXJuYWxGUUROfQpxX3B1cHBldF9lbnRlcnByaXNlY29uc29sZV9tYXN0ZXJfaG9zdG5hbWU9XCR7YXp1cmVfZXh0ZXJuYWxGUUROfQpxX3B1cHBldF9lbnRlcnByaXNlY29uc29sZV9zbXRwX2hvc3Q9XCR7YXp1cmVfZXh0ZXJuYWxGUUROfQpxX3B1cHBldGFnZW50X2NlcnRuYW1lPVwke2F6dXJlX2V4dGVybmFsRlFETn0KcV9wdXBwZXRtYXN0ZXJfZG5zYWx0bmFtZXM9cHVwcGV0LCQoaG9zdG5hbWUpLFwke2F6dXJlX2ludGVybmFsRlFETn0sXCR7YXp1cmVfZXh0ZXJuYWxGUUROfQpxX3B1cHBldGFnZW50X3NlcnZlcj1cJHthenVyZV9leHRlcm5hbEZRRE59CnFfcHVwcGV0ZGJfaG9zdG5hbWU9XCR7YXp1cmVfZXh0ZXJuYWxGUUROfQpxX3B1cHBldG1hc3Rlcl9jZXJ0bmFtZT1cJHthenVyZV9leHRlcm5hbEZRRE59CmVjaG8gImRlYiBbdHJ1c3RlZD15ZXNdIGZpbGU6L3Vzci9iaW4vcHVwcGV0LWluaXQvcHVwcGV0LWVudGVycHJpc2UtMjAxNi4xLjItdWJ1bnR1LTE0LjA0LWFtZDY0L3BhY2thZ2VzL3VidW50dS0xNC4wNC1hbWQ2NCAuLyIgPiAvZXRjL2FwdC9zb3VyY2VzLmxpc3QuZC9wdXBwZXQtZW50ZXJwcmlzZS5saXN0CkVPRgpjaG1vZCAreCAvdG1wL3B1cHBldF9vdmVycmlkZS5hbnN3ZXJzCg==",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": [],
+                    "adminPassword": "[parameters('virtualMachines_puppetmaster_adminPassword')]"
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_puppetmasterNic_name'))]"
+                        }
+                    ]
+                }
+            },
+            "resources": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_puppetmasterNic_name'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_puppetmasterNic_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westeurope",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "10.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_ip01_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet01_name')), '/subnets/subnet01')]"
+                            }
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableIPForwarding": false
+            },
+            "resources": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_ip01_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet01_name'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('networkSecurityGroups_puppetNetworkSecurityGroup_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westeurope",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "puppet",
+                        "properties": {
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "8140",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "ssh",
+                        "properties": {
+                            "description": "Allow SSH",
+                            "protocol": "tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 201,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "MCollective",
+                        "properties": {
+                            "description": "MCollective",
+                            "protocol": "tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "61613",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 102,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "https",
+                        "properties": {
+                            "description": "MCollective",
+                            "protocol": "tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "443",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 103,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "orchestrator",
+                        "properties": {
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "8142",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 104,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            },
+            "resources": [],
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_ip01_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westeurope",
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "ptest"
+                }
+            },
+            "resources": [],
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_vnet01_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westeurope",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "subnet01",
+                        "properties": {
+                            "addressPrefix": "10.0.0.0/24",
+                            "networkSecurityGroup": {
+                                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_puppetNetworkSecurityGroup_name'))]"
+                            }
+                        }
+                    }
+                ]
+            },
+            "resources": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_puppetNetworkSecurityGroup_name'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_name')]",
+            "apiVersion": "2016-01-01",
+            "location": "westeurope",
+            "tags": {},
+            "properties": {},
+            "resources": [],
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_name')]",
+            "apiVersion": "2016-01-01",
+            "location": "westeurope",
+            "tags": {},
+            "properties": {},
+            "resources": [],
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[parameters('extensions_CustomScriptExtension_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westeurope",
+            "properties": {
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "CustomScriptForLinux",
+                "typeHandlerVersion": "1.3",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://gallery.azure.com/artifact/20151001/puppet.puppet-enterprise-2016-1puppet-enterprise-2016-1.1.0.4/Artifacts/wait.sh"
+                    ]
+                },
+                "protectedSettings": "[parameters('extensions_CustomScriptExtension_protectedSettings')]"
+            },
+            "resources": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_puppetmaster_name'))]"
+            ]
+        }
+    ]
+}
