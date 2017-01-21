@@ -30,8 +30,8 @@ puppet module install puppetlabs-azure
 
 # getting the script sources for config
 
-exit 0
-git clone https://github.com/chrisvugrinec/ms-buddyfinder.git
+#exit 0
+#git clone https://github.com/chrisvugrinec/ms-buddyfinder.git
 
 azureconf="/etc/puppetlabs/puppet/azure.conf"
 
@@ -45,5 +45,6 @@ echo "export AZURE_MANAGEMENT_CERTIFICATE="$(pwd)/certificate.pem
 echo "export AZURE_SUBSCRIPTION_ID="$subscriptionid
 echo "export AZURE_MANAGEMENT_CERTIFICATE="$(pwd)/certificate.pem >> ~/.bashrc
 echo "export AZURE_SUBSCRIPTION_ID="$subscriptionid >> ~/.bashrc
-. ~/.bashrc 
 echo "written conf to "$azureconf
+echo "you need to load the ENV variables and create a KEY in the console for your app"
+echo "this key needs to be copied in the "$azureconf" file"
