@@ -9,6 +9,14 @@
 #
 #=========================================
 
+if [ "$#" -ne 1 ]
+then
+  echo "provide app as parameter"
+  exit 1
+fi
+
+app=$1 
+
 # Stuff needed for tooling
 apt-get update
 apt-get -y install git
@@ -33,18 +41,15 @@ puppet module install puppetlabs-azure
 #exit 0
 #git clone https://github.com/chrisvugrinec/ms-buddyfinder.git
 
+
+./loginToAzure.sh
 azureconf="/etc/puppetlabs/puppet/azure.conf"
 
 subscriptionid=$(azure account show --json | jq -r  '.[].id')
 tenantid=$(azure account show --json | jq -r  '.[].tenantId')
 clientid=$(azure account show --json | jq -r  '.[].user.name')
 
-echo "azure: { subscription_id: \"$subscriptionid\",tenant_id: \"$tenantid\",client_id: \"$clientid\",client_secret: \"LOOKUP SECRET\" }" >$azureconf
-echo "setting the following env variables: "
-echo "export AZURE_MANAGEMENT_CERTIFICATE="$(pwd)/certificate.pem
-echo "export AZURE_SUBSCRIPTION_ID="$subscriptionid
-echo "export AZURE_MANAGEMENT_CERTIFICATE="$(pwd)/certificate.pem >> ~/.bashrc
-echo "export AZURE_SUBSCRIPTION_ID="$subscriptionid >> ~/.bashrc
+echo "azure: {\n subscription_id: \"$subscriptionid\" \n tenant_id: \"$tenantid\" \n client_id: \"$clientid\" \n client_secret: \"LOOKUP SECRET\" \n }" >$azureconf
 echo "written conf to "$azureconf
-echo "you need to load the ENV variables and create a KEY in the console for your app"
+echo "you need to load the ENV variables and create a KEY in the console for your app principal named: "$app
 echo "this key needs to be copied in the "$azureconf" file"

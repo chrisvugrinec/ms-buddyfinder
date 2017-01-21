@@ -1,8 +1,9 @@
-azure_vm_classic { 'virtual-machine-name':
-  ensure           => present,
-  image            => 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150706-en-us-30GB',
-  location         => 'West Europe',
-  user             => 'chris',
-  size             => 'Medium',
-  private_key_file => '~/.ssh/id_rsa.pub',
+azure_vm { 'buildagent-no2':
+  ensure         => present,
+  location       => 'westeurope',
+  image          => 'canonical:ubuntuserver:14.04.2-LTS:latest',
+  user           => 'chris',
+  password       => 'HelloWorld123!',
+  size           => 'Standard_A0',
+  resource_group => 'demo-infra',
 }
