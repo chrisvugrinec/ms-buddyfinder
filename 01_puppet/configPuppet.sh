@@ -1,7 +1,7 @@
 #!/bin/sh
 #=========================================
 #
-#       file:   createPuppetAzureConf.sh
+#       file:  configPuppet.sh 
 #       author: chvugrin@microsoft.com
 #       description: creates the puppet config file 
 #                    so your puppet can use the azure module                    
@@ -18,12 +18,12 @@ fi
 app=$1 
 
 # Stuff needed for tooling
-apt-get update
-apt-get -y install git
-apt-get -y install nodejs-legacy
-apt-get -y install npm
-apt-get -y install jq
-npm -g install azure-cli
+#apt-get update
+#apt-get -y install git
+#apt-get -y install nodejs-legacy
+#apt-get -y install npm
+#apt-get -y install jq
+#npm -g install azure-cli
 
 # Stuff needed for azure puppet module
 
