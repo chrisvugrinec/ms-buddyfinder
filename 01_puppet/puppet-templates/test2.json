@@ -1,0 +1,3 @@
+{
+  "commandToExecute": "curl -k https://raw.githubusercontent.com/chrisvugrinec/ms-buddyfinder/master/01_puppet/provisionscripts/provision.sh | sudo bash"
+}

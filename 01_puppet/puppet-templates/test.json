@@ -1,0 +1,3 @@
+{
+  "commandToExecute": "echo hello_world>/tmp/xxx"
+}
