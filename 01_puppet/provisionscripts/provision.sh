@@ -1,3 +1,6 @@
 #!/bin/bash
+password="HelloWorld123!"
 apt-get update
-apt-get install -y docker
+apt -y  install docker.io
+/usr/sbin/useradd -p `openssl passwd -1 $password` vsts
+
