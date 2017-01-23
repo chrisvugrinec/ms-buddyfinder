@@ -1,4 +1,4 @@
-#!/bin/bas
+#!/bin/bash
 #
 # small helper app to guide your through configuring your template
 #
