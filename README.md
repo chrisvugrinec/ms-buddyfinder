@@ -1,3 +1,3 @@
 # ms-buddyfinder
 
-![Screenshot](https://github.com/chrisvugrinec/ms-buddyfinder/blob/master/documentation/presentation.pdf)
+![Screenshot](https://raw.githubusercontent.com/chrisvugrinec/ms-buddyfinder/documentation/master/presentation.pdf)
