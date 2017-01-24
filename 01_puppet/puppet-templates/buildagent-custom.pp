@@ -1,6 +1,6 @@
 azure_vm { 'buildagent1':
   location                      => 'westeurope',
-  image                         => 'canonical:UbuntuServer:16.10:16.10.201701030',
+  image                         => 'canonical:UbuntuServer:14.04.5-LTS:14.04.201701100',
   user                          => 'chris',
   password                      => 'HelloWorld123!',
   size                          => 'Standard_D2_V2',
