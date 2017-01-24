@@ -36,6 +36,8 @@ app=$1
 /opt/puppetlabs/puppet/bin/gem install hocon --version='~>1.1.2' --no-ri --no-rdoc
 puppet module install puppetlabs-azure
 
+cp provisionscripts/common.yaml /etc/puppetlabs/code/environments/production/hieradata/
+
 # getting the script sources for config
 
 #exit 0

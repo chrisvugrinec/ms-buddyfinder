@@ -1,12 +1,12 @@
-# azure_redis
+# azure_mplace_redis
 
 #### Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with azure_redis](#setup)
-    * [What azure_redis affects](#what-azure_redis-affects)
+1. [Setup - The basics of getting started with azure_mplace_redis](#setup)
+    * [What azure_mplace_redis affects](#what-azure_mplace_redis-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with azure_redis](#beginning-with-azure_redis)
+    * [Beginning with azure_mplace_redis](#beginning-with-azure_mplace_redis)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -25,7 +25,7 @@ management, etc.), this is the time to mention it.
 
 ## Setup
 
-### What azure_redis affects **OPTIONAL**
+### What azure_mplace_redis affects **OPTIONAL**
 
 If it's obvious what your module touches, you can skip this section. For
 example, folks can probably figure out that your mysql_instance module affects
@@ -47,7 +47,7 @@ If your most recent release breaks compatibility or requires particular steps
 for upgrading, you might want to include an additional "Upgrading" section
 here.
 
-### Beginning with azure_redis
+### Beginning with azure_mplace_redis
 
 The very basic steps needed for a user to get the module up and running. This
 can include setup steps, if necessary, or it can be an example of the most

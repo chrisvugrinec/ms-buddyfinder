@@ -1,11 +1,11 @@
 {
-  "name": "cvugrinec-azure_redis",
+  "name": "cvugrinec-azure_mplace_redis",
   "version": "0.1.0",
   "author": "cvugrinec",
-  "summary": "create a redis cache on azure",
+  "summary": null,
   "license": "Apache-2.0",
   "source": "",
-  "project_page": "http://portal.azure.com",
+  "project_page": null,
   "issues_url": null,
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
