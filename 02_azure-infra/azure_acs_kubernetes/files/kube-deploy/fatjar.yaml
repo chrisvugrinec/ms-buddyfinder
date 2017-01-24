@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: java-simple-fatjar
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: fatjar
+    spec:
+      containers:
+      - name: fatjar
+        image: cvugrinec/quickstart-java-simple-fatjar
+        ports:
+        - containerPort: 80
+
