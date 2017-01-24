@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "registries_msbfdregistry_accessKey": {
+            "type": "SecureString"
+        },
+        "registries_msbfdregistry_name": {
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.ContainerRegistry/registries",
+            "name": "[parameters('registries_msbfdregistry_name')]",
+            "apiVersion": "2016-06-27-preview",
+            "location": "westeurope",
+            "tags": {},
+            "properties": {
+                "adminUserEnabled": false,
+                "storageAccount": {
+                    "name": "[parameters('registries_msbfdregistry_name')]",
+                    "accessKey": "[parameters('registries_msbfdregistry_accessKey')]"
+                }
+            },
+            "resources": [],
+            "dependsOn": []
+        },
+    ]
+}
