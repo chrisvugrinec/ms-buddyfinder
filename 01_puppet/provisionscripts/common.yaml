@@ -3,3 +3,6 @@ azure-redis:
   resourcegroup: msbf-demo1
   rediscachename: demoviapuppet1
   storageaccount: demoviapuppet1
+azure-dockerregistry:
+  resourcegroup: msbf-demo1
+  name: msbf-dockerregistry
