@@ -6,3 +6,6 @@ azure-redis:
 azure-dockerregistry:
   resourcegroup: msbf-demo1
   name: msbf-dockerregistry
+azure-acs-kube:
+  resourcegroup: msbf-kube1
+  numberofnodes: 5
