@@ -35,6 +35,7 @@ app=$1
 /opt/puppetlabs/puppet/bin/gem install azure_mgmt_network --version='~>0.3.0' --no-ri --no-rdoc
 /opt/puppetlabs/puppet/bin/gem install hocon --version='~>1.1.2' --no-ri --no-rdoc
 puppet module install puppetlabs-azure
+puppet module install maestrodev-ssh_keygen --version 1.3.1
 
 cp provisionscripts/common.yaml /etc/puppetlabs/code/environments/production/hieradata/
 
