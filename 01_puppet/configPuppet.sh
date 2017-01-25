@@ -38,6 +38,7 @@ puppet module install puppetlabs-azure
 puppet module install maestrodev-ssh_keygen --version 1.3.1
 
 cp provisionscripts/common.yaml /etc/puppetlabs/code/environments/production/hieradata/
+cp -f provisionscripts/hiera.yaml /etc/puppetlabs/code/
 
 # getting the script sources for config
 
