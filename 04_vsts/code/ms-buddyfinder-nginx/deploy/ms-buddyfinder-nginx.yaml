@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ms-buddyfinder-nginx
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ms-buddyfinder-nginx
+    spec:
+      containers:
+      - name: ms-buddyfinder-nginx
+        image: XXX_DOCKERREG_XXX/XXX_APP_XXX:XXX_BUILD_XXX
+        command: ["nodejs", "index.js"]
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: my-secret

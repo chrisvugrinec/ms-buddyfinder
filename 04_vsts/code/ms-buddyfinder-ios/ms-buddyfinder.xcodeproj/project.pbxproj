@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		830BE55C1E17D9C200F40301 /* csa.png in Resources */ = {isa = PBXBuildFile; fileRef = 830BE55B1E17D9C200F40301 /* csa.png */; };
+		830BE5601E19AAFE00F40301 /* lunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 830BE55E1E19AAFE00F40301 /* lunch.png */; };
+		830BE5641E19CD1000F40301 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 830BE5631E19CD1000F40301 /* coffee.png */; };
+		835393761E0F1DC5003061E3 /* ms-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 835393751E0F1DC5003061E3 /* ms-logo.jpg */; };
+		8365A44D1E0E2FBC00CD5231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A44C1E0E2FBC00CD5231 /* AppDelegate.swift */; };
+		8365A44F1E0E2FBC00CD5231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A44E1E0E2FBC00CD5231 /* ViewController.swift */; };
+		8365A4521E0E2FBC00CD5231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8365A4501E0E2FBC00CD5231 /* Main.storyboard */; };
+		8365A4541E0E2FBC00CD5231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8365A4531E0E2FBC00CD5231 /* Assets.xcassets */; };
+		8365A4571E0E2FBC00CD5231 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8365A4551E0E2FBC00CD5231 /* LaunchScreen.storyboard */; };
+		8365A4621E0E2FBC00CD5231 /* playfield_locatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A4611E0E2FBC00CD5231 /* playfield_locatorTests.swift */; };
+		8365A46D1E0E2FBC00CD5231 /* playfield_locatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365A46C1E0E2FBC00CD5231 /* playfield_locatorUITests.swift */; };
+		838BD80C1E13C942002A16ED /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = 838BD80B1E13C942002A16ED /* certificate.der */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8365A45E1E0E2FBC00CD5231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8365A4411E0E2FBB00CD5231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8365A4481E0E2FBB00CD5231;
+			remoteInfo = "ms-buddyfinder";
+		};
+		8365A4691E0E2FBC00CD5231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8365A4411E0E2FBB00CD5231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8365A4481E0E2FBB00CD5231;
+			remoteInfo = "ms-buddyfinder";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		830BE55B1E17D9C200F40301 /* csa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = csa.png; sourceTree = "<group>"; };
+		830BE55E1E19AAFE00F40301 /* lunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunch.png; sourceTree = "<group>"; };
+		830BE5631E19CD1000F40301 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		83107AC81E2A11E5002116A8 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMessaging.framework; path = lib/WindowsAzureMessaging.framework; sourceTree = "<group>"; };
+		83107ACA1E2A11F8002116A8 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMobileServices.framework; path = lib/WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+		835393751E0F1DC5003061E3 /* ms-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ms-logo.jpg"; sourceTree = "<group>"; };
+		8365A4491E0E2FBC00CD5231 /* ms-buddyfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ms-buddyfinder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8365A44C1E0E2FBC00CD5231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8365A44E1E0E2FBC00CD5231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "ms-buddyfinder/ViewController.swift"; sourceTree = SOURCE_ROOT; };
+		8365A4511E0E2FBC00CD5231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8365A4531E0E2FBC00CD5231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8365A4561E0E2FBC00CD5231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8365A4581E0E2FBC00CD5231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8365A45D1E0E2FBC00CD5231 /* ms-buddyfinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ms-buddyfinderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8365A4611E0E2FBC00CD5231 /* playfield_locatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playfield_locatorTests.swift; sourceTree = "<group>"; };
+		8365A4631E0E2FBC00CD5231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8365A4681E0E2FBC00CD5231 /* ms-buddyfinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ms-buddyfinderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8365A46C1E0E2FBC00CD5231 /* playfield_locatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playfield_locatorUITests.swift; sourceTree = "<group>"; };
+		8365A46E1E0E2FBC00CD5231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		838BD80B1E13C942002A16ED /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.der; sourceTree = "<group>"; };
+		83BA6BA91E326B1400F4B5B3 /* msbf.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = msbf.mobileprovision; sourceTree = "<group>"; };
+		83DFBB6B1E2AEBB4005BE9E2 /* KontaktSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KontaktSDK.framework; path = Carthage/Build/iOS/KontaktSDK.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8365A4461E0E2FBB00CD5231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8365A45A1E0E2FBC00CD5231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8365A4651E0E2FBC00CD5231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83107AC71E2A11E4002116A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83DFBB6B1E2AEBB4005BE9E2 /* KontaktSDK.framework */,
+				83107ACA1E2A11F8002116A8 /* WindowsAzureMobileServices.framework */,
+				83107AC81E2A11E5002116A8 /* WindowsAzureMessaging.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8365A4401E0E2FBB00CD5231 = {
+			isa = PBXGroup;
+			children = (
+				83BA6BA91E326B1400F4B5B3 /* msbf.mobileprovision */,
+				8365A44B1E0E2FBC00CD5231 /* ms-buddyfinder */,
+				8365A4601E0E2FBC00CD5231 /* ms-buddyfinderTests */,
+				8365A46B1E0E2FBC00CD5231 /* ms-buddyfinderUITests */,
+				8365A44A1E0E2FBC00CD5231 /* Products */,
+				83107AC71E2A11E4002116A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8365A44A1E0E2FBC00CD5231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8365A4491E0E2FBC00CD5231 /* ms-buddyfinder.app */,
+				8365A45D1E0E2FBC00CD5231 /* ms-buddyfinderTests.xctest */,
+				8365A4681E0E2FBC00CD5231 /* ms-buddyfinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8365A44B1E0E2FBC00CD5231 /* ms-buddyfinder */ = {
+			isa = PBXGroup;
+			children = (
+				830BE55E1E19AAFE00F40301 /* lunch.png */,
+				830BE5631E19CD1000F40301 /* coffee.png */,
+				830BE55B1E17D9C200F40301 /* csa.png */,
+				838BD80B1E13C942002A16ED /* certificate.der */,
+				835393751E0F1DC5003061E3 /* ms-logo.jpg */,
+				8365A44C1E0E2FBC00CD5231 /* AppDelegate.swift */,
+				8365A44E1E0E2FBC00CD5231 /* ViewController.swift */,
+				8365A4501E0E2FBC00CD5231 /* Main.storyboard */,
+				8365A4531E0E2FBC00CD5231 /* Assets.xcassets */,
+				8365A4551E0E2FBC00CD5231 /* LaunchScreen.storyboard */,
+				8365A4581E0E2FBC00CD5231 /* Info.plist */,
+			);
+			path = "ms-buddyfinder";
+			sourceTree = "<group>";
+		};
+		8365A4601E0E2FBC00CD5231 /* ms-buddyfinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				8365A4611E0E2FBC00CD5231 /* playfield_locatorTests.swift */,
+				8365A4631E0E2FBC00CD5231 /* Info.plist */,
+			);
+			path = "ms-buddyfinderTests";
+			sourceTree = "<group>";
+		};
+		8365A46B1E0E2FBC00CD5231 /* ms-buddyfinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8365A46C1E0E2FBC00CD5231 /* playfield_locatorUITests.swift */,
+				8365A46E1E0E2FBC00CD5231 /* Info.plist */,
+			);
+			path = "ms-buddyfinderUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8365A4481E0E2FBB00CD5231 /* ms-buddyfinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8365A4711E0E2FBC00CD5231 /* Build configuration list for PBXNativeTarget "ms-buddyfinder" */;
+			buildPhases = (
+				8365A4451E0E2FBB00CD5231 /* Sources */,
+				8365A4461E0E2FBB00CD5231 /* Frameworks */,
+				8365A4471E0E2FBB00CD5231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ms-buddyfinder";
+			productName = "ms-buddyfinder";
+			productReference = 8365A4491E0E2FBC00CD5231 /* ms-buddyfinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8365A45C1E0E2FBC00CD5231 /* ms-buddyfinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8365A4741E0E2FBC00CD5231 /* Build configuration list for PBXNativeTarget "ms-buddyfinderTests" */;
+			buildPhases = (
+				8365A4591E0E2FBC00CD5231 /* Sources */,
+				8365A45A1E0E2FBC00CD5231 /* Frameworks */,
+				8365A45B1E0E2FBC00CD5231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8365A45F1E0E2FBC00CD5231 /* PBXTargetDependency */,
+			);
+			name = "ms-buddyfinderTests";
+			productName = "ms-buddyfinderTests";
+			productReference = 8365A45D1E0E2FBC00CD5231 /* ms-buddyfinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8365A4671E0E2FBC00CD5231 /* ms-buddyfinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8365A4771E0E2FBC00CD5231 /* Build configuration list for PBXNativeTarget "ms-buddyfinderUITests" */;
+			buildPhases = (
+				8365A4641E0E2FBC00CD5231 /* Sources */,
+				8365A4651E0E2FBC00CD5231 /* Frameworks */,
+				8365A4661E0E2FBC00CD5231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8365A46A1E0E2FBC00CD5231 /* PBXTargetDependency */,
+			);
+			name = "ms-buddyfinderUITests";
+			productName = "ms-buddyfinderUITests";
+			productReference = 8365A4681E0E2FBC00CD5231 /* ms-buddyfinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8365A4411E0E2FBB00CD5231 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = datalinks;
+				TargetAttributes = {
+					8365A4481E0E2FBB00CD5231 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					8365A45C1E0E2FBC00CD5231 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UMSUTXZ4M8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8365A4481E0E2FBB00CD5231;
+					};
+					8365A4671E0E2FBC00CD5231 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UMSUTXZ4M8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8365A4481E0E2FBB00CD5231;
+					};
+				};
+			};
+			buildConfigurationList = 8365A4441E0E2FBB00CD5231 /* Build configuration list for PBXProject "ms-buddyfinder" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8365A4401E0E2FBB00CD5231;
+			productRefGroup = 8365A44A1E0E2FBC00CD5231 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8365A4481E0E2FBB00CD5231 /* ms-buddyfinder */,
+				8365A45C1E0E2FBC00CD5231 /* ms-buddyfinderTests */,
+				8365A4671E0E2FBC00CD5231 /* ms-buddyfinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8365A4471E0E2FBB00CD5231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				835393761E0F1DC5003061E3 /* ms-logo.jpg in Resources */,
+				830BE55C1E17D9C200F40301 /* csa.png in Resources */,
+				8365A4571E0E2FBC00CD5231 /* LaunchScreen.storyboard in Resources */,
+				838BD80C1E13C942002A16ED /* certificate.der in Resources */,
+				8365A4541E0E2FBC00CD5231 /* Assets.xcassets in Resources */,
+				830BE5641E19CD1000F40301 /* coffee.png in Resources */,
+				830BE5601E19AAFE00F40301 /* lunch.png in Resources */,
+				8365A4521E0E2FBC00CD5231 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8365A45B1E0E2FBC00CD5231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8365A4661E0E2FBC00CD5231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8365A4451E0E2FBB00CD5231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8365A44F1E0E2FBC00CD5231 /* ViewController.swift in Sources */,
+				8365A44D1E0E2FBC00CD5231 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8365A4591E0E2FBC00CD5231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8365A4621E0E2FBC00CD5231 /* playfield_locatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8365A4641E0E2FBC00CD5231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8365A46D1E0E2FBC00CD5231 /* playfield_locatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8365A45F1E0E2FBC00CD5231 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8365A4481E0E2FBB00CD5231 /* ms-buddyfinder */;
+			targetProxy = 8365A45E1E0E2FBC00CD5231 /* PBXContainerItemProxy */;
+		};
+		8365A46A1E0E2FBC00CD5231 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8365A4481E0E2FBB00CD5231 /* ms-buddyfinder */;
+			targetProxy = 8365A4691E0E2FBC00CD5231 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8365A4501E0E2FBC00CD5231 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8365A4511E0E2FBC00CD5231 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8365A4551E0E2FBC00CD5231 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8365A4561E0E2FBC00CD5231 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8365A46F1E0E2FBC00CD5231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8365A4701E0E2FBC00CD5231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8365A4721E0E2FBC00CD5231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UMSUTXZ4M8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ms-buddyfinder",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "ms-buddyfinder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "datalinks.ms-buddyfinder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8365A4731E0E2FBC00CD5231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UMSUTXZ4M8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ms-buddyfinder",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "ms-buddyfinder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "datalinks.ms-buddyfinder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8365A4751E0E2FBC00CD5231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UMSUTXZ4M8;
+				INFOPLIST_FILE = "ms-buddyfinderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "datalinks.ms-buddyfinderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ms-buddyfinder.app/ms-buddyfinder";
+			};
+			name = Debug;
+		};
+		8365A4761E0E2FBC00CD5231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UMSUTXZ4M8;
+				INFOPLIST_FILE = "ms-buddyfinderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "datalinks.ms-buddyfinderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ms-buddyfinder.app/ms-buddyfinder";
+			};
+			name = Release;
+		};
+		8365A4781E0E2FBC00CD5231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = UMSUTXZ4M8;
+				INFOPLIST_FILE = "ms-buddyfinderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "datalinks.ms-buddyfinderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "ms-buddyfinder";
+			};
+			name = Debug;
+		};
+		8365A4791E0E2FBC00CD5231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = UMSUTXZ4M8;
+				INFOPLIST_FILE = "ms-buddyfinderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "datalinks.ms-buddyfinderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "ms-buddyfinder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8365A4441E0E2FBB00CD5231 /* Build configuration list for PBXProject "ms-buddyfinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8365A46F1E0E2FBC00CD5231 /* Debug */,
+				8365A4701E0E2FBC00CD5231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8365A4711E0E2FBC00CD5231 /* Build configuration list for PBXNativeTarget "ms-buddyfinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8365A4721E0E2FBC00CD5231 /* Debug */,
+				8365A4731E0E2FBC00CD5231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8365A4741E0E2FBC00CD5231 /* Build configuration list for PBXNativeTarget "ms-buddyfinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8365A4751E0E2FBC00CD5231 /* Debug */,
+				8365A4761E0E2FBC00CD5231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8365A4771E0E2FBC00CD5231 /* Build configuration list for PBXNativeTarget "ms-buddyfinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8365A4781E0E2FBC00CD5231 /* Debug */,
+				8365A4791E0E2FBC00CD5231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8365A4411E0E2FBB00CD5231 /* Project object */;
+}

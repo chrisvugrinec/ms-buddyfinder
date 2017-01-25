@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ms-buddyfinder-nodejs
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ms-buddyfinder-nodejs
+    spec:
+      containers:
+      - name: ms-buddyfinder-nodejs
+        image: XXX_DOCKERREG_XXX/XXX_APP_XXX:XXX_BUILD_XXX
+        command: ["/bin/sh","-c"]
+        args: ["node server.js"]
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: my-secret

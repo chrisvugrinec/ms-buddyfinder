@@ -1,0 +1,17 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "ms-buddyfinder-nodejs-service"
+  },
+  "spec": {
+    "ports": [{
+      "port": 3000,
+      "targetPort": 3000
+    }],
+    "selector": {
+      "app": "ms-buddyfinder-nodejs"
+    },
+    "type": "LoadBalancer"
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   MagicMountainAttractions.plist
+   ms-buddyfinder-kontaktio
+
+   Created by chris vugrinec on 15-01-17.
+   Copyright (c) 2017 datalinks. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Cold Stone</string>
+        <key>location</key>
+        <string>{34.42401,-118.59495}</string>
+        <key>type</key>
+        <string>2</string>
+        <key>subtitle</key>
+        <string>Cost: $</string>
+    </dict>
+</plist>
