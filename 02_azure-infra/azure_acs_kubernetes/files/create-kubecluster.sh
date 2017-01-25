@@ -1,40 +1,42 @@
 #!//bin/bash
 
-#az login
-azure account show
-echo "Enter sub id"
-read subscription
-sub=$(az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/$subscription")
-echo "Resource groupname"
-read rgroupname
+rgroupname=$1
+numberofnodes=$2
+
+# Gather stuff needed for keys in template
 tmpkey=`echo $(cat ~/.ssh/id_rsa.pub)`
 sshKey=$(echo "$tmpkey" | sed 's/\//\\\//g')
-clientid=$(echo $sub | jq '.client_id')
-clientsecret=$(echo $sub | jq '.client_secret')
+clientid=$(cat /etc/puppetlabs/puppet/azure.conf | grep client_id | sed 's/[\"]//g' | sed 's/^.*[:] //')
+clientsecret=$(cat /etc/puppetlabs/puppet/azure.conf | grep client_secret | sed 's/[\"]//g' | sed 's/^.*[:] //')
 id=$(uuid)
 
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/gopath
-go get github.com/Azure/acs-engine 2>/dev/null
+if [ ! -d ~/go ]
+then
+  mkdir ~/go
+fi
+
+export GOPATH=$HOME/go
+go get github.com/Azure/acs-engine
 go get all
 cd $GOPATH/src/github.com/Azure/acs-engine
 go build
 
-cp /root/gopath/src/github.com/Azure/acs-engine/examples/kubernetes.json /opt/acs-kube-template.json
-cd /opt
+cp ~/go/src/github.com/Azure/acs-engine/examples/kubernetes.json /opt/puppet/acs-kube-template.json
+cd /opt/puppet
 sed -in "s/keyData\": \"\"/keyData\": \"$sshKey\"/g" acs-kube-template.json
 sed -in "s/servicePrincipalClientID\": \"\"/servicePrincipalClientID\": $clientid/g" acs-kube-template.json
 sed -in "s/servicePrincipalClientSecret\": \"\"/servicePrincipalClientSecret\": $clientsecret/g" acs-kube-template.json
 sed -in "s/dnsPrefix\": \"\"/dnsPrefix\": \"a${id}z\"/g" acs-kube-template.json
+sed -in "s/\"count\": 3,/\"count\": $numberofnodes/" acs-kube-template.json
 
-cd /root/gopath/src/github.com/Azure/acs-engine
+cd ~/go/src/github.com/Azure/acs-engine
 ./acs-engine /opt/acs-kube-template.json
-cp _output/Kubernetes*/azuredeploy* /opt
-cd /opt
+cp _output/Kubernetes*/azuredeploy* /opt/puppet/
+cd /opt/puppet
 
 azure group create \
     --name=$rgroupname \
-    --location="east us"
+    --location="westeurope"
 
 azure group deployment create \
     --name=$id \
@@ -42,7 +44,8 @@ azure group deployment create \
     --template-file="azuredeploy.json" \
     --parameters-file="azuredeploy.parameters.json"
 
-mkdir ~/.kube 
-echo "NOW copy the kube master config to your machine...and you are good to go"
-echo "scp azureuser@a${id}z.eastus.cloudapp.azure.com:~/.kube/config ~/.kube/config"
-cd /root/microsoft/acs-kubernetes/kube-deploy
+if [ ! -d ~/.kube ]
+then
+  mkdir ~/.kube 
+fi
+echo "scp azureuser@a${id}z.westeurope.cloudapp.azure.com:~/.kube/config ~/.kube/config" >~/kube-msg.txt
