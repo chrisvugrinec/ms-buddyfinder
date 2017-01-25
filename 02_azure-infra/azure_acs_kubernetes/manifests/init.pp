@@ -23,7 +23,7 @@ class azure_acs_kubernetes {
     source => 'puppet:///modules/azure_acs_kubernetes/create-kubecluster.sh',
   }->
   exec { 'install_acs_kube':
-    command     => 'install_dregistry.sh $resourcegroup $numberofnodes',
+    command     => 'create-kubecluster.sh $resourcegroup $numberofnodes',
     cwd         => '/opt/puppet/',
     path        => '/opt/puppet/:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin',
     refreshonly => true,
