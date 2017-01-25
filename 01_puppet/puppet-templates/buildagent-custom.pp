@@ -29,7 +29,7 @@ azure_vm { 'buildagent1':
        'type'                       => 'CustomScript',
        'type_handler_version'       => '2.0',
        'settings'                   => {
-         'commandToExecute' => 'curl -k https://raw.githubusercontent.com/chrisvugrinec/ms-buddyfinder/master/01_puppet/provisionscripts/provision.sh | sudo bash'
+         'commandToExecute' => 'curl -k https://raw.githubusercontent.com/chrisvugrinec/ms-buddyfinder/master/01_puppet/provisionscripts/provision-buildagent.sh | sudo bash'
        },
      },
   },
