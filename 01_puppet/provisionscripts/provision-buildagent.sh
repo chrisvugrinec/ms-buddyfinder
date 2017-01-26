@@ -6,6 +6,7 @@ apt -y  install docker.io
 # fix needed for vsts on ubuntu 16.04
 apt-get install -y libunwind8 libcurl3
 apt-get install -y libunwind8 libcurl3 libicu52
+sudo -H -u vsts bash -c 'ssh-keygen -t rsa -f  ~/.ssh/id_rsa -P ""'
 # adding user vsts to docker group
 usermod -aG docker vsts
 sudo -H -u vsts bash -c '/bin/mkdir /vsts/bagent'
