@@ -35,19 +35,24 @@ class azure_acs_kubernetes {
     source => 'puppet:///modules/azure_acs_kubernetes/create-kubecluster.sh',
   }->
   exec { 'config_acs_kube':
+    environment => ["GOPATH=/root/go"],
     command     => "config-kubecluster.sh $numberofnodes",
     cwd         => '/opt/puppet/',
     path        => '/root/go/bin/:/opt/puppet/:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin',
     user        => "root",
-    refreshonly => false,
     timeout     => 1800,
+  }->
+    azure_resource_group { "$resourcegroup":
+    ensure         => present,
+    location       => 'westeurope',
   }->
   exec { 'create_acs_kube':
     command     => "create-kubecluster.sh $resourcegroup",
     cwd         => '/opt/puppet/',
     path        => '/root/go/bin/:/opt/puppet/:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin',
     user        => "root",
-    refreshonly => false,
+    logoutput   => true,
+    provider    => shell,
     timeout     => 1800,
   }
 }
