@@ -23,9 +23,11 @@
   * docker id: the admin username of your docker registry
   * password: your docker pass reg password
 
-## project
-
+## Nginx Config frontend app
+* edit ms-buddyfinder/04_vsts/code/ms-buddyfinder-nginx/src/index.js so that the data of your REDIS is used
+* now configure your build in vsts for this app
 * builds, new definition , select Empty
 * select remote repository, connect to https://github.com/chrisvugrinec/ms-buddyfinder.git
 * configure build steps
 * if docker is not amongst the available solutions, select it from the marketplace
+* make your docker config point to: ms-buddyfinder/04_vsts/code/ms-buddyfinder-nginx/Dockerfile and run the build
