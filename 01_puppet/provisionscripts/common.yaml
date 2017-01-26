@@ -5,7 +5,7 @@ azure-redis:
   storageaccount: demoviapuppet1
 azure-dockerregistry:
   resourcegroup: msbf-demo1
-  name: msbf-dockerregistry
+  name: msbfdockerregistry
 azure-acs-kube:
   resourcegroup: msbf-kube1
   numberofnodes: 5

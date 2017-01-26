@@ -3,9 +3,6 @@
 rgroupname=$1
 numberofnodes=$2
 
-
-test=$(azure group show $rgroupname | grep "could ot be found")
-
 # Gather stuff needed for keys in template
 tmpkey=`echo $(cat ~/.ssh/id_rsa.pub)`
 sshKey=$(echo "$tmpkey" | sed 's/\//\\\//g')
@@ -13,17 +10,12 @@ clientid=$(cat /etc/puppetlabs/puppet/azure.conf | grep client_id | sed 's/[\"]/
 clientsecret=$(cat /etc/puppetlabs/puppet/azure.conf | grep client_secret | sed 's/[\"]//g' | sed 's/^.*[:] //')
 id=$(uuid)
 
-if [ ! -d ~/go ]
-then
-  mkdir ~/go
-fi
-
 if [ -d ~/go/src/github.com/Azure/acs-engine/ ]
 then 
   rm -rf ~/go/src/github.com/Azure/acs-engine/
 fi
 
-export GOPATH=$HOME/go
+export GOPATH=/root/go
 go get github.com/Azure/acs-engine
 go get all
 cd $GOPATH/src/github.com/Azure/acs-engine

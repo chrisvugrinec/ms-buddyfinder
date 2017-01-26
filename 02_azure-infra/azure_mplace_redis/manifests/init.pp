@@ -33,7 +33,7 @@ class azure_mplace_redis {
     command => "install_redis.sh $resourcegroup $rediscachename $storageaccount",
     cwd => "/opt/puppet/",
     path => '/opt/puppet/:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin',
-    refreshonly => true,
+    refreshonly => false,
     timeout     => 18000,
   }
 

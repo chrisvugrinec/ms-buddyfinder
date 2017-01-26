@@ -18,10 +18,10 @@ class azure_mplace_dockerregistry {
   }
 
   exec { 'install_dockerregistry':
-    command     => 'install_dregistry.sh $resourcegroup $dockerregistryname',
+    command     => "install_dregistry.sh $resourcegroup $dockerregistryname",
     cwd         => '/opt/puppet/',
     path        => '/opt/puppet/:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin',
-    refreshonly => true,
+    refreshonly => false,
     timeout     => 18000,
   }
 
