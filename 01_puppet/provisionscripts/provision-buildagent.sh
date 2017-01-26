@@ -6,6 +6,12 @@ apt -y  install docker.io
 # fix needed for vsts on ubuntu 16.04
 apt-get install -y libunwind8 libcurl3
 apt-get install -y libunwind8 libcurl3 libicu52
+
+# install the kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
 # adding user vsts to docker group
 usermod -aG docker vsts
 sudo -H -u vsts bash -c 'ssh-keygen -t rsa -f  ~/.ssh/id_rsa -P ""'
