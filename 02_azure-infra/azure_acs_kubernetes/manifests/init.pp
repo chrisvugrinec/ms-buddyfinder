@@ -49,6 +49,7 @@ class azure_acs_kubernetes {
   exec { 'create_acs_kube':
     command     => "create-kubecluster.sh $resourcegroup",
     cwd         => '/opt/puppet/',
+    refreshonly => true,
     path        => '/root/go/bin/:/opt/puppet/:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin',
     user        => "root",
     logoutput   => true,
