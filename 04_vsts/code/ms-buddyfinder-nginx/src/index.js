@@ -22,6 +22,26 @@ subscriber.on("message", function(channel, message) {
     io.emit('MSBUDDYFINDER_STATUS_FE', message);
 });
 
+app.get("/in", function(req, res) {
+
+  var user=req.query.user;
+  var message=req.query.message;
+
+  pointx=Math.round(Math.random());
+  pointy=Math.round(Math.random());
+
+  var status = {
+      "user": user,
+      "message": message,
+      "pointx": pointx,
+      "pointy": pointy
+   }
+   subscriber.publish("MSBUDDYFINDER_STATUS", JSON.stringify(status));
+   return res.send(status);
+});
+
+
+
 http.listen(3000, function(){
   //app.use(serveStatic(__dirname, {'index': ['images/ms-officemap.png']}));
   app.use(serveStatic(__dirname, {'index': ['images/logo-solvinity.png']}));
