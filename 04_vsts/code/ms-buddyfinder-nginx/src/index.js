@@ -26,4 +26,6 @@ http.listen(3000, function(){
   //app.use(serveStatic(__dirname, {'index': ['images/ms-officemap.png']}));
   app.use(serveStatic(__dirname, {'index': ['images/logo-solvinity.png']}));
   console.log('listening on *:3000');
+  console.log('REDIS URL : '+process.env.REDIS_URL);
+  console.log('REDIS PASSWORD : '+process.env.REDIS_PASSWORD);
 });
