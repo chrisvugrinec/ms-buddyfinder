@@ -32,13 +32,13 @@ $.ajaxSetup ({
 
 function removeUser(uuid) {
 
-        $.ajax({
-             type: "GET",
-             url: "https://datalinks.nl:3000/out?id="+uuid,
-             error: function(data){
-               console.log("exception removing user "+uuid+"from cache");
-             }
-         });
+  $.ajax({
+    type: "GET",
+    url: "https://datalinks.nl:3000/out?id="+uuid,
+    error: function(data){
+      console.log("exception removing user "+uuid+"from cache");
+    }
+  });
 }
 
   var socket = io();
@@ -46,7 +46,7 @@ function removeUser(uuid) {
 
   bcsocket.on('MSBUDDYFINDER_BROADCAST', function(msg2){
      var bcval = jQuery.parseJSON( msg2 );
-     $( "<div style='font-family:Arial, Helvetica,sans-serif; color:#4256f4;font-weight: bold;'>"+bcval.from+' said: '+bcval.message+"</div>" ).appendTo( "div.broadcasts" ).offset({ left: 1100 });
+     $( "<div style='font-family:Arial, Helvetica,sans-serif; color:#4256f4;font-weight: bold;'>"+bcval.from+' said: '+bcval.message+"</div>" ).appendTo( "div.broadcasts" ));
   });
 
 

@@ -27,8 +27,8 @@ app.get("/in", function(req, res) {
   var user=req.query.user;
   var message=req.query.message;
 
-  pointx=Math.round(Math.random());
-  pointy=Math.round(Math.random());
+  pointx=Math.round(Math.random() * 1024);
+  pointy=Math.round(Math.random() * 768);
 
   var status = {
       "user": user,
@@ -36,7 +36,7 @@ app.get("/in", function(req, res) {
       "pointx": pointx,
       "pointy": pointy
    }
-   subscriber.publish("MSBUDDYFINDER_STATUS", JSON.stringify(status));
+   subscriber.publish("'MSBUDDYFINDER_BROADCAST", JSON.stringify(status));
    return res.send(status);
 });
 
