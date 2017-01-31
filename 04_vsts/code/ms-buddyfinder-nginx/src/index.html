@@ -30,22 +30,12 @@ $.ajaxSetup ({
     cache: false
 });
 
-function removeUser(uuid) {
-
-  $.ajax({
-    type: "GET",
-    url: "https://datalinks.nl:3000/out?id="+uuid,
-    error: function(data){
-      console.log("exception removing user "+uuid+"from cache");
-    }
-  });
-}
-
   var socket = io();
   var bcsocket = io();
 
   bcsocket.on('MSBUDDYFINDER_BROADCAST', function(msg2){
      var bcval = jQuery.parseJSON( msg2 );
+     console.log('received message'+bcval.user);
      alert("hello"+bcval.user);
   });
 
@@ -70,11 +60,6 @@ function removeUser(uuid) {
       $( "<div id="+val.uuid+" style='background: url("+val.logo+"); font-family:Arial, Helvetica,sans-serif; color:#4256f4;font-weight: bold;  background-size: 60px 60px; height: 60px; width: 60px; background-repeat: no-repeat;'>"+val.name+"</div>" ).appendTo( "div.csacolony" ).offset({ left: val.top, top: val.left});
       $("#"+val.uuid+"").attr("beacon", val.beacon);
     }
-  }
-  // not in means it should be of the screen and removed from redis cache
-  if(!(val.state.indexOf("in_")>-1)){
-    document.getElementById(val.uuid).remove();
-    removeUser(val.uuid);
   }
 });
 
