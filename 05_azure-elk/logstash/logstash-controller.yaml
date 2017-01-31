@@ -31,6 +31,8 @@ spec:
         volumeMounts:
         - mountPath: /certs
           name: certs
+      imagePullSecrets:
+      - name: my-secret
       volumes:
       - emptyDir:
           medium: ""
