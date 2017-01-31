@@ -14,7 +14,6 @@ RUN npm install express
 RUN npm install socket.io
 RUN npm install redis
 RUN npm install serve-static
-RUN npm install system-sleep
 
 
 
