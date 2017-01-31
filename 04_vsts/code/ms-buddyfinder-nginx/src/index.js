@@ -3,6 +3,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var redis = require("redis");
 var serveStatic = require('serve-static');
+var sleep = require('sleep');
 
 var subscriber= redis.createClient(6380,process.env.REDIS_URL, {auth_pass:process.env.REDIS_PASSWORD, tls: {servername: process.env.REDIS_URL}});
 
@@ -13,8 +14,12 @@ app.get('/', function(req, res){
 
 subscriber.subscribe("MSBUDDYFINDER_BROADCAST");
 subscriber.on("message", function(channel, message) {
-    io.emit('MSBUDDYFINDER_BROADCAST', message);
+   sleep.sleep(3);
+   io.emit('MSBUDDYFINDER_BROADCAST', message);
 });
+
+
+
 
 subscriber.subscribe("MSBUDDYFINDER_STATUS");
 subscriber.on("message", function(channel, message) {
@@ -37,6 +42,7 @@ app.get("/in", function(req, res) {
       "pointy": pointy
    }
    subscriber.publish("MSBUDDYFINDER_BROADCAST", JSON.stringify(status));
+   
    return res.send(status);
 });
 
