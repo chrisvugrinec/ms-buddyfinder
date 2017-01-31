@@ -23,6 +23,7 @@ subscriber.on("message", function(channel, message) {
 });
 
 http.listen(3000, function(){
-  app.use(serveStatic(__dirname, {'index': ['images/ms-officemap.png']}));
+  //app.use(serveStatic(__dirname, {'index': ['images/ms-officemap.png']}));
+  app.use(serveStatic(__dirname, {'index': ['images/logo-solvinity.png']}));
   console.log('listening on *:3000');
 });
