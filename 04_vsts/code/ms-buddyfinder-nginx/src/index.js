@@ -36,7 +36,7 @@ app.get("/in", function(req, res) {
       "pointx": pointx,
       "pointy": pointy
    }
-   subscriber.publish("'MSBUDDYFINDER_BROADCAST", JSON.stringify(status));
+   subscriber.publish("MSBUDDYFINDER_BROADCAST", JSON.stringify(status));
    return res.send(status);
 });
 
