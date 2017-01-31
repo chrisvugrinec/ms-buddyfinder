@@ -2,6 +2,8 @@
 
 ## Setup your puppet master
 
+See it in action: https://youtu.be/nB8iFlDjLFg
+
 * Install Puppet via console; choose 2016.1 template
 * ssh into newly create puppetmaster
 * sudo su -
