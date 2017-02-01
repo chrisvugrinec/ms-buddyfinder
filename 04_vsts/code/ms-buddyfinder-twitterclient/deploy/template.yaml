@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: XXX_APP_XXX
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: XXX_APP_XXX
+    spec:
+      containers:
+      - name: XXX_APP_XXX
+        image: XXX_DOCKERIMG_XXX:XXX_BUILDNR_XXX
+        command: ["swagger", "project","start"]
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REDIS_URL
+          value: "XXX_REDIS_URL_XXX"
+        - name: REDIS_PASSWORD
+          value: "XXX_REDIS_PASSWORD_XXX"
+      imagePullSecrets:
+      - name: my-secret
