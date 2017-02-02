@@ -42,7 +42,7 @@ paths:
           schema:
             # a pointer to a definition
             $ref: "#/definitions/TwitterResponse"
-        # responses may fall through to errors
+        # responses may: fall through to errors
         default:
           description: Error
           schema:
